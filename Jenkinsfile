@@ -1,16 +1,21 @@
-pipeline{
+pipeline {
     agent {
-        label 'worker' 
+        label 'worker'
     }
-    stages{ 
-        stage("Build and Push"){  
-            steps{
-                sh "cd vote"
+    stages { 
+        stage("Build and Push") {  
+            steps {
+                sh '''
+                   cd vote
+                  
+                '''
             }
         }
-        stage("Deploy"){
-            steps{
-                sh "echo kubectl"
+        stage("Deploy") {
+            steps {
+                sh '''
+                   echo "Deploying using kubectl"
+                '''
             }
         }
     }
