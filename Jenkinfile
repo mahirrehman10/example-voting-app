@@ -1,0 +1,17 @@
+pipeline{
+    agent {
+        label 'worker' (by what name we need to declared slave node)
+    }
+    stages{ 
+        stage("Build and Push"){  (contain all the block of step that we need to do )
+            steps{ (to write actual step to do sh is  used to execute shell commands within the context of the pipeline.)
+                sh "cd vote"
+            }
+        }
+        stage("Deploy"){
+            steps{
+                sh "echo kubectl"
+            }
+        }
+    }
+}
